@@ -1,0 +1,22 @@
+version: '3'
+services:
+  weather-app:
+    build: .
+    ports:
+      - "5008:5008"
+    depends_on:
+      - cassandra
+
+  cassandra:
+    image: cassandra:latest
+    ports:
+      - "9042:9042"
+    environment:
+      - CASSANDRA_CLUSTER_NAME=weather_scraping
+      - CASSANDRA_ENDPOINT_SNITCH=GossipingPropertyFileSnitch
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+
+volumes:
+  cassandra-data:
+
