@@ -10,11 +10,15 @@ Flask va regarder dans cassandra si on a déjà scrapper les données sur ce pay
 
 # Les fichiers :
 
-app_weather.py : Fait le scraping, la connexion avec Cassandra, l'insertion des données dans Cassandra et la création des routes pour Flask
-Dockerfile
-requirements.txt : contient les librairies nécessaires 
-templates/index.html : le templates pour Flask
-docker-compose.yaml
+# app_weather.py 
+Fait le scraping, la connexion avec Cassandra, l'insertion des données dans Cassandra et la création des routes pour Flask
+
+# Dockerfile
+# requirements.txt
+contient les librairies nécessaires 
+# templates/index.html 
+le templates pour Flask
+# docker-compose.yaml
 
 #Commandes à lancer : 
 
