@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+<h1>Weather App</h1>
+<form method="POST">
+    <label for="city_name">Nom de la ville :</label>
+    <input type="text" id="city_name" name="city_name" required>
+    <button type="submit">Afficher la météo</button>
+</form>
+
+{% if weather_data %}
+<h2>Information météorologique pour {{ city_name }}</h2>
+<ul>
+    {% for weather_entry in weather_data %}
+    <li>
+        <strong>City Name:</strong> {{ weather_entry['city_name'] }}<br>
+        <strong>City ID:</strong> {{ weather_entry['city_id'] }}<br>
+        <strong>Coord Lon:</strong> {{ weather_entry['coord_lon'] }}<br>
+        <strong>Coord Lat:</strong> {{ weather_entry['coord_lat'] }}<br>
+        <strong>Country:</strong> {{ weather_entry['country'] }}<br>
+        <strong>Timezone:</strong> {{ weather_entry['timezone'] }}<br>
+        <strong>Sun Rise:</strong> {{ weather_entry['sun_rise'] }}<br>
+        <strong>Sun Set:</strong> {{ weather_entry['sun_set'] }}<br>
+        <strong>Temperature:</strong> {{ weather_entry['temperature_value'] }}°C<br>
+        <strong>Feels Like:</strong> {{ weather_entry['feels_like_value'] }}°C<br>
+        <strong>Humidity:</strong> {{ weather_entry['humidity_value'] }}%<br>
+        <strong>Pressure:</strong> {{ weather_entry['pressure_value'] }} hPa<br>
+        <strong>Wind Speed:</strong> {{ weather_entry['wind_speed_value'] }} m/s<br>
+        <strong>Wind Direction:</strong> {{ weather_entry['wind_direction_value'] }}°<br>
+        <strong>Clouds:</strong> {{ weather_entry['clouds_value'] }}%<br>
+        <strong>Visibility:</strong> {{ weather_entry['visibility_value'] }} meters<br>
+        <strong>Weather:</strong> {{ weather_entry['weather_value'] }}<br>
+        <strong>Last Update:</strong> {{ weather_entry['lastupdate_value'] }}<br>
+    </li>
+    {% endfor %}
+</ul>
+{% else %}
+<p> Pas d'information météorologique à afficher pour l'instant </p>
+<p> Veuillez entrer un nom de ville et appuyer sur le bouton afficher la météo </p>
+{% endif %}
+</body>
+</html>
