@@ -20,12 +20,12 @@ contient les librairies nécessaires
 le templates pour Flask
 # docker-compose.yaml
 
-#Commandes à lancer : 
+# Commandes à lancer : 
 
-sudo docker-compose up
+# sudo docker-compose up
 Si tout va bien, allez à l'adresse : localhost:5000
 Sinon : 
 
-sudo docker run --name abdata-cassandra -p 7000:7000 -p 7001:7001 -p 7199:7199 -p 9042:9042 -p 9160:9160 -d cassandra:latest
-python3 app_weather.py
+# sudo docker run --name abdata-cassandra -p 7000:7000 -p 7001:7001 -p 7199:7199 -p 9042:9042 -p 9160:9160 -d cassandra:latest
+# python3 app_weather.py
 Allez à l'adresse : localhost:5000
